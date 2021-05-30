@@ -1,7 +1,8 @@
 $(function () {
     getUserInfo();
+    var layer = layui.layer
     $('#logOut').on('click', function () {
-        layui.layer.confirm('确定退出登录?', { icon: 3, title: '提示' }, function (index) {
+        layer.confirm('确定退出登录?', { icon: 3, title: '提示' }, function (index) {
             localStorage.removeItem('token');
             location.href = '/login.html';
 
