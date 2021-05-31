@@ -20,10 +20,11 @@ $(function () {
     })
     //监听上传照片的change事件
     $('#inputAvatar').on('change', function (e) {
-        var file = e.target.files[0];
-        if (file.length < 1) {
+        var filelist = e.target.files;
+        if (filelist.length == 0) {
             return layer.msg('请选择照片！')
         }
+        var file = e.target.files[0];
         var newImgURL = URL.createObjectURL(file);
         $image
             .cropper('destroy')      // 销毁旧的裁剪区域
